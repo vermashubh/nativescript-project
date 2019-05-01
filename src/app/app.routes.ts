@@ -1,15 +1,20 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+
 
 export const routes: Routes = [
+
+
   {
-      path: '',
-      redirectTo: '/home',
-      pathMatch: 'full',
+    path: '',
+    loadChildren : './modules/login/login.module#LoginModule'
+  }, {
+    path : 'dashboard',
+    loadChildren :'./modules/dashboard/dashboard.module#DashboardModule'
   },
   {
-      path: 'home',
-      component: HomeComponent,
-  },
+    path : 'addedit',
+    loadChildren :'./modules/addedit/addedit.module#AddeditModule'
+  }
+  
 ];

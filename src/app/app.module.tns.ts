@@ -1,9 +1,11 @@
+import { ApisService } from './services/apis.service';
+
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
-
+import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -14,14 +16,17 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
+    AppComponent
+  
   ],
   imports: [
     NativeScriptModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NativeScriptHttpClientModule
   ],
-  providers: [],
+  providers: [ApisService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

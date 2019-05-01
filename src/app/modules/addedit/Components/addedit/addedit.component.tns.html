@@ -1,0 +1,16 @@
+<ActionBar title="Sales Master"></ActionBar>
+
+<FlexboxLayout class="page">
+    <StackLayout class="form" [class.dark]="!isLoggingIn" [formGroup]="add_editteamform">
+
+        <Label text="TEam"></Label>
+        <TextField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none"
+            class="input input-border" formControlName="team_name"></TextField>
+
+        <Label text="Amount"></Label>
+        <TextField hint="amount" secure="true" class="input input-border" formControlName="amount"></TextField>
+
+        <Button text="Sign in" class="btn btn-primary m-t-20" (tap)="submit(add_editteamform.value)">
+        </Button>
+    </StackLayout>
+</FlexboxLayout>

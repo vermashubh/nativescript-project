@@ -1,0 +1,20 @@
+<header>
+<app-header></app-header>
+</header>
+
+<GridLayout>
+    <RadListView [items]="teamList" class="list-group">
+    <ng-template let-item="item">
+    <StackLayout class="list-group-item" orientation="horizontal">
+      <GridLayout>
+    <Label [text]=" item.team_name" (tap)= "editRecord()" horizontalAlignment="left" style="margin:15" ></Label>
+    <Label [text]=" item.amount" style.textAlignment="right" ></Label>
+  </GridLayout> 
+  </StackLayout>
+    </ng-template>
+    </RadListView>
+    </GridLayout>
+
+<footer>
+  <app-footer></app-footer>
+</footer>
